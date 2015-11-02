@@ -36,19 +36,18 @@
  
       <div style="color:white;" align="justify"> 
 <p>
-Welcome to the OpenShift Enterprise by Red Hat Test Drive companion for the RHPDS and OPENTLC training modules.
-This Test Drive provides test invocations for the weightwatcher demo.  
+Welcome to the OpenShift Enterprise by Red Hat Test Drive companion for the weighwatcher demo.
 A comprehensive write-up of the weightwatcher demo is available in the docs location at <a href="https://github.com/StefanoPicozzi/weightwatcher2">GitHub repository</a>
 </p>
 
 <p>
 To execute these test case, first Set the FQDN:PORT that hosts your targeted weightwatcher application instance.  
-You can then verify that the KIE Container can been successfully accessed used the Get KIE Container caommand.
 </p>
 
 <p>
-You can issue a sample business request using the Post Facts menu option which will send a payload of weight observations to the JBoss BRMS Server.  
-The Rules engine will then reason over these facts and return a payload of insights as an XML response payload.
+You can then test a sample invocation using the Post Facts menu option.  
+This will send a payload of weight observations to the Decision Server.  
+The service will then reason over these facts and return a payload of insights as an XML response payload
 </p>
 
      </div>

@@ -9,6 +9,7 @@
 <html class="no-js" lang="en-US">
    <!--<![endif]-->
 
+
 <html lang="en">
    <head>
       <title>OpenShift V3 TestDrive</title>
@@ -48,13 +49,44 @@
                         </a>
                      </li>
 
+                                          
                      <li>
-                        <a href="getkiecontainer.php" data-ajax="false">Get KIE Container 
+                        <a href="postfacts.php" data-ajax="false">Post Facts 
                         </a>
                      </li>
                      
                      <li>
-                        <a href="postfacts.php" data-ajax="false">Post Facts 
+                        <a href="getkieserver.php" data-ajax="false">Get Decision Server
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="getkiecontainer.php" data-ajax="false">Get Watch Container 
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="deletekiecontainer.php" data-ajax="false">Delete Watch Container 
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="createkiecontainer.php" data-ajax="false">Create Watch Container 
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="getscanner.php" data-ajax="false">Get Watch Scanner
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="stopscanner.php" data-ajax="false">Stop Watch Scanner
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="startscanner.php" data-ajax="false">Start Watch Scanner
                         </a>
                      </li>
                                                                                                         

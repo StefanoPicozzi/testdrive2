@@ -34,6 +34,12 @@
          <ul data-role="listview"  id="SettingsList" data-icon="arrow-r" data-inset="true" >
             <li data-role="divider"> <h4>Help Menu </h4> </li>
             <li> <a href="contact.php" data-ajax="false">Contact </a> </li>
+            <li> <a href="#pageGlossary">Glossary
+               <span class="ui-li-count"> 2 </script></span></a> 
+            </li>
+            <li> <a href="#pageResources">Resources 
+               <span class="ui-li-count"> 10 </script></span></a>
+             </li>
          </ul>
       </div>
    </div>
@@ -188,12 +194,21 @@ OpenShift can run anywhere Red Hat Enterprise Linux is supported including the A
             <li>
                <div data-role="collapsible">
                   <h4>
-OpenShift Broker
+Docker 
                   </h4>
                      <p align=justify style="white-space:normal;">
-The Broker is a Rails application that manages all application control, user authentication, and DNS updates within OpenShift Enterprise PaaS.
-The Broker uses a MongoDB database to keep a record of users and their applications. 
-The Broker manages user authentication and DNS changes through the use of provided plugins.                    
+A container management and image deployment service.
+                     </p>
+               </div>
+            </li>
+
+            <li>
+               <div data-role="collapsible">
+                  <h4>            
+Kubernetes
+                  </h4>
+                     <p align=justify style="white-space:normal;">
+An orchestrator and schedule for container based applications in the OpenShift Enterprise environment.
                      </p>
                </div>
             </li>
@@ -201,30 +216,23 @@ The Broker manages user authentication and DNS changes through the use of provid
             <li>
                <div data-role="collapsible">
                   <h4>
-OpenShift Enterprise Test Drive
+Registry 
                   </h4>
                      <p align=justify style="white-space:normal;">
-The OpenShift Enterprise Test Drive consists of four Amazon managed instances (AMI) based on Red Hat Enterprise Linux (RHEL).  
-The AMIs consists of one OSE Broker, two acting as OSE Nodes, and a fourth as a general client environment. 
-The OSE Broker is a Rails application that manages all application control, user authentication, and DNS updates within OpenShift Enterprise PaaS.  Node servers are the systems that host user applications.  Each node can host many applications using a secure, multi-tenanted container model.  Known as "gears", each gear represents the slice of the 
-Node’s CPU, RAM and base storage that is made available to each application
-Each customer lab is provisioned on a unique VPC in order to have the same IP addressing scheme within each VPC. 
-The following documentation shows you how to attach the GlusterFS volume to each one of the clients using GlusterFS native, NFS, SMB and Object access protocols.
+
+Provides storage of and management access to container images.
                      </p>
                </div>
             </li>
-                        
+
             <li>
                <div data-role="collapsible">
-                  <h4>
-Application
+                  <h4>                  	
+Pods
                   </h4>
                      <p align=justify style="white-space:normal;">
-This is your typical web application that will run on OpenShift. At this time, Open‐
-Shift is focused on hosting web applications. With this in mind, and to try to provide
-some security for your applications, the only ports exposed to incoming traffic are
-HTTP (80), HTTPS (443), and SSH (22). OpenShift also provides beta WebSocket
-support on HTTP (8000) and HTTPS (8443).
+
+A Kubernetes term that means an application or instance of something (may include 1 or more containers).
                      </p>
                </div>
             </li>
@@ -232,27 +240,11 @@ support on HTTP (8000) and HTTPS (8443).
             <li>
                <div data-role="collapsible">
                   <h4>
-Domains
+Project 
                   </h4>
                      <p align=justify style="white-space:normal;">
-OpenShift allows a user to create multiple domains that are associated with their account. 
-Keep in mind that the domain in this context does not refer to the domain name of the application, 
-but rather to a unique identifier for grouping your applications.                     
-                    </p>
-               </div>
-            </li>
-
-            <li>
-               <div data-role="collapsible">
-                  <h4>
-Gear
-                  </h4>
-                     <p align=justify style="white-space:normal;">
-A gear is a server container with a set of resources that allows users to run their
-applications. Your gears run on OpenShift in the cloud. There are currently three
-gear types on OpenShift Online: small, medium, and large. Each size provides 1 GB
-of disk space by default. The large gear has 2 GB of RAM, the medium gear has 1
-GB of RAM, and the small gear has 512 MB of RAM.
+A place to group together various elements of OpenShift applications. Project have multiple characteristics such as resource quotas/constraints, policies, user access, etc
+Router: An ingress poit for traffic destined for OSE services. The router is a container that can run on any node in your environment.
                      </p>
                </div>
             </li>
@@ -260,58 +252,10 @@ GB of RAM, and the small gear has 512 MB of RAM.
             <li>
                <div data-role="collapsible">
                   <h4>
-Cartridge
-                  </h4>
-                  <div  style="white-space:normal;">
-                     <p align=justify style="white-space:normal;">
-To get a gear to do anything, you need to add a cartridge. Cartridges are the plugins
-that house the framework or components that can be used to create and run an
-application. One or more cartridges run on each gear, and the same cartridge can
-run on many gears for clustering or scaling. There are two kinds of cartridges:
-<b>Standalone</b>
-These are the languages or application servers that are set up to serve your web content, such as JBoss, Tomcat, Python, or Node.js. Having one of these cartridges is sufficient to run an application.
-<b>Embedded</b>
-An embedded cartridge provides functionality to enhance your application,
-such as a database or Cron, but cannot be used on its own to create an application.
-                     </p>
-               </div>
-            </li>
-                        
-            <li>
-               <div data-role="collapsible">
-                  <h4>
-Scalable Application
+Route
                   </h4>
                      <p align=justify style="white-space:normal;">
-Application scaling enables your application to react to changes in traffic and automatically allocate the necessary resources to handle your increased demand. The
-OpenShift infrastructure monitors incoming web traffic and automatically brings
-up new gears with the appropriate web cartridge online to handle more requests. 
-When traffic decreases, the platform retires the extra resources. 
-When you create a scaled application, it can consume multiple gears: one for the high-availability proxy (HAProxy) itself, 
-and one or more for your actual application. If you add other cartridges like PostgreSQL or MySQL to your application, 
-they are installed on their own dedicated gears.  
-The HAProxy cartridge sits between your application and the network and routes web traffic to your web cartridges. 
-When traffic increases, HAProxy notifies the OSE servers that it needs additional capacity. 
-There is a web page dedicated to explaining how scaling works on OpenShift.
-                     </p>
-               </div>
-            </li>
-            
-            <li>
-               <div data-role="collapsible">
-                  <h4>
-Client tools, Web Console, or Eclipse plug-ins
-
-                  </h4>
-                     <p align=justify style="white-space:normal;">
-You can interact with the OpenShift platform via RHC client command-line tools
-you install on your local machine, the OpenShift Web Console, or a plug-in you
-install in Eclipse to interact with your application in the OpenShift cloud. The only
-time you must use these tools is when you are managing the infrastructure or components
-of your application. For example, you would use these tools when creating
-an application or embedding a new cartridge. The rest of your work with your
-application will happen through Git and SSH, which we describe in the following
-section.
+Matches FQDN-destined traffic requests to services and the pods they represent, mapping internal and external IPs as well as ports.
                      </p>
                </div>
             </li>
@@ -319,11 +263,10 @@ section.
             <li>
                <div data-role="collapsible">
                   <h4>
-Port Forwarding
+Service
                   </h4>
                      <p align=justify style="white-space:normal;">
-With OpenShift port forwarding, developers can connect to their remote services while using 
-local client tools without having to worry about the details of configuring complicated firewall rules. 
+Defines a logical set of pods and the policy by which to access them.
                      </p>
                </div>
             </li>
@@ -331,13 +274,10 @@ local client tools without having to worry about the details of configuring comp
             <li>
                <div data-role="collapsible">
                   <h4>
-Regions and Zones
+Scheduler
                   </h4>
                      <p align=justify style="white-space:normal;">
-OpenShift Enterprise supports grouping nodes into regions and zones. 
-Regions and zones provide a way for brokers to manage several distinct geographies by controlling application deployments across a selected group of nodes. A group of nodes can form a zone and several zones can belong to a single region. 
-These groups can represent logical environments, physical geographies, such as different countries or data centers, or can be used to provide network level separation between node environments.  
-Zones can be mapped to physical locations such as, e.g. specific blades in a rack.
+Schedules workloads on available nodes based on various rules.
                      </p>
                </div>
             </li>
@@ -345,31 +285,51 @@ Zones can be mapped to physical locations such as, e.g. specific blades in a rac
             <li>
                <div data-role="collapsible">
                   <h4>
-Districts
+Replication Controller
                   </h4>
                      <p align=justify style="white-space:normal;">
-Districts facilitate gear movement between node hosts in order to manage resource usage.  
-Districts and zones can be combined to protect against affinity of gear placement to physical hardware.  
-For example, by assigning a district to span multiple physically mapped zones, 
-the OSE gear deployment algorithm will ensure that scaled gears are not collocated.
+Controls how many instances of a pod or service need to be started. Also handles instance restarts.
                      </p>
                </div>
             </li>
-                        
+
             <li>
                <div data-role="collapsible">
                   <h4>
-Quickstarts
+Templates
                   </h4>
                      <p align=justify style="white-space:normal;">
-Developers can create applications using QuickStarts, which are preconfigured applications installed from a specific source.  
-QuickStarts are not available to developers by default in OpenShift Enterprise but can be added by editing the quickstarts.json 
-file on the broker host.
+JSON files that define a complete application to Kubernetes.
                      </p>
                </div>
             </li>
-                              
 
+            <li>
+               <div data-role="collapsible">
+                  <h4>
+Master
+                  </h4>
+                     <p align=justify style="white-space:normal;">
+The host or hosts that contain OpenShift Enterprise control components, including the API server, controller manager server, and etcd. The master manages nodes in its Kubernetes cluster and schedules pods to run on nodes.
+                     </p>
+               </div>
+            </li>
+
+            <li>
+               <div data-role="collapsible">
+                  <h4>
+Nodes 
+                  </h4>
+                     <p align=justify style="white-space:normal;">
+Provide the runtime environments for containers. Each node in a Kubernetes cluster has the required services to be managed by the master. Nodes also have the required services to run pods, including Docker, a kubelet and a service proxy.
+                     </p>
+               </div>
+            </li>
+
+
+
+
+                             
                                     
          </ul>
    </div>
@@ -433,60 +393,64 @@ Some text.
                   </li>
 
                      <li>
-                        <a href="#pageYoutube" data-ajax="false">
-                           Youtube
+                        <a href=" https://www.youtube.com/watch?v=D_Lj0rObunI" data-ajax="false">
+                           You Tube
                         </a>
                      </li> 
-                  
+                                      
                      <li>
                         <a href="https://access.redhat.com/documentation/en-US/OpenShift_Enterprise/" data-ajax="false">
                            Documentation
                         </a>
                      </li> 
+                     
+                     <li>
+                        <a href="http://www.openshift.org/" data-ajax="false">
+                           OpenShift Origin
+                        </a>
+                     </li> 
 
                      <li>
-                        <a href="https://developers.openshift.com/" data-ajax="false">
-                           Developers Portal
+                        <a href="http://commons.openshift.org/" data-ajax="false">
+                           OpenShift Commons
                         </a>
-                     </li>
+                     </li> 
                                        
                      <li>
-                        <a href="https://developers.openshift.com/en/overview-platform-features.html" data-ajax="false">
+                        <a href="https://enterprise.openshift.com/features/" data-ajax="false">
                           Features
                         </a>
                      </li>
 
                      <li>
-                        <a href="https://developers.openshift.com/en/managing-client-tools.html" data-ajax="false">
-                           Client Tools
+                        <a href="https://www.openshift.com/promotions/kubernetes.html" data-ajax="false">
+                           Kubernetes eBook
+                        </a>
+                     </li> 
+                     
+                     <li>
+                        <a href="https://www.openshift.com/promotions/docker-security.html" data-ajax="false">
+                           Docker Security eBook
                         </a>
                      </li>                               
 
+                     <li>
+						   <a href="docs/ContainerColoringBook.pdf" download="ContainerColoringBook" data-ajax="false" >
+                           Container Coloring Book
+                        </a>
+                     </li> 
 
                      <li>
-                        <a href="https://www.openshift.com/promotions/ebook" data-ajax="false">
-                           Getting Started eBook
-                        </a>
-                     </li>                               
-
-                     <li>
-                        <a href="https://www.openshift.com/" data-ajax="false">
-                           OpenShift Online
+						   <a href="docs/SELinuxColoringBook.pdf" download="SELinuxColoringBook" data-ajax="false" >
+                           SELinux Coloring Book
                         </a>
                      </li> 
-                  
+                                        
                      <li>
-                        <a href="https://github.com/openshift" data-ajax="false">
-                           GitHub
+                        <a href="https://github.com/openshift/origin" data-ajax="false">
+                           Origin GitHub
                         </a>
-                     </li> 
-                                 
-                     <li>
-                        <a href="http://training.runcloudrun.com/standard/" data-ajax="false">
-                           Training
-                        </a>
-                     </li> 
- 
+                     </li>
                   
                </ul>
             </div>
@@ -503,7 +467,7 @@ Some text.
    <script>writeHeader("backhelp", "home")</script>
 
          <div data-role="content" align="center">
-      <iframe width="300" height="200" src="https://www.youtube.com/embed/rbFIHgHDRgo" frameborder="0" allowfullscreen></iframe>
+      <iframe width="300" height="200" src="https://www.youtube.com/watch?v=D_Lj0rObunI" frameborder="0" allowfullscreen></iframe>
          </div>
    <script> writeFooter(); </script>
          
@@ -517,7 +481,7 @@ Some text.
    <script>writeHeader("backhelp", "home")</script>
 
          <div data-role="content">
-      <iframe width="300" height="200" src="https://www.youtube.com/embed/_f_p0CgPeyA" frameborder="0" allowfullscreen></iframe>
+      <iframe width="300" height="200" src="https://www.youtube.com/watch?v=D_Lj0rObunI" frameborder="0" allowfullscreen></iframe>
          </div>
    <script> writeFooter(); </script>
          
