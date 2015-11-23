@@ -14,10 +14,16 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="css/themes/testdrivetheme.min.css" />
       <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+<!--
+ 	  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
       <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
-      
+-->
+
+      <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0.min.css"/>
+      <script src="js/jquery-1.10.2.min.js" ></script>
+      <script src="js/jquery.mobile-1.4.0.min.js"></script>
+            
       <link rel="stylesheet" href="css/testdrive.css" />      
       <script src="js/testdrive.js"  ></script>  
 
@@ -38,7 +44,7 @@
                <span class="ui-li-count"> 2 </script></span></a> 
             </li>
             <li> <a href="#pageResources">Resources 
-               <span class="ui-li-count"> 10 </script></span></a>
+               <span class="ui-li-count"> 16 </script></span></a>
              </li>
          </ul>
       </div>
@@ -59,7 +65,7 @@
          <ul data-role="listview"  id="SettingsList" data-icon="arrow-r" data-inset="true" >
             <li data-role="divider"> <h4>Glossary </h4> </li>
             <li> <a href="#pageOSETerms">OpenShift</a> </li>
-            <li> <a href="#pageAWSTerms">AWS</a> </li>
+            <li> <a href="#pageAWSTerms">Miscellaneous</a> </li>
          </ul>
       </div>
    </div>
@@ -393,6 +399,12 @@ Some text.
                   </li>
 
                      <li>
+                        <a href="images/OpenShift3Architecture.png" data-ajax="false">
+                           OpenShift Architecture Graphic
+                        </a>
+                     </li> 
+                     
+                     <li>
                         <a href=" https://www.youtube.com/watch?v=D_Lj0rObunI" data-ajax="false">
                            You Tube
                         </a>
@@ -400,10 +412,16 @@ Some text.
                                       
                      <li>
                         <a href="https://access.redhat.com/documentation/en-US/OpenShift_Enterprise/" data-ajax="false">
-                           Documentation
+                           OpenShift Documentation
                         </a>
                      </li> 
-                     
+
+                     <li>
+                        <a href="https://access.redhat.com/article-type/reference-architecture" data-ajax="false">
+                           Reference Architectures
+                        </a>
+                     </li> 
+                                          
                      <li>
                         <a href="http://www.openshift.org/" data-ajax="false">
                            OpenShift Origin
@@ -418,7 +436,7 @@ Some text.
                                        
                      <li>
                         <a href="https://enterprise.openshift.com/features/" data-ajax="false">
-                          Features
+                          OpenShift Features
                         </a>
                      </li>
 
@@ -451,7 +469,31 @@ Some text.
                            Origin GitHub
                         </a>
                      </li>
+                     
+                     <li>
+                        <a href="http://docs.jboss.org/drools/release/latestFinal/drools-docs/html_single/" data-ajax="false">
+                           Drools Documentation
+                        </a>
+                     </li>
                   
+                     <li>
+                        <a href="https://access.redhat.com/documentation/en/red-hat-jboss-brms/" data-ajax="false">
+                           JBoss BRMS Documentation
+                        </a>
+                     </li>                  
+
+                     <li>
+                        <a href="http://docs.jboss.org/drools/release/latestFinal/drools-docs/html_single/#d0e21474" data-ajax="false">
+                           Decision Server Documentation
+                        </a>
+                     </li>    
+
+                     <li>
+                        <a href="https://www.redhat.com/en/services/training" data-ajax="false">
+                           Red Hat Training
+                        </a>
+                     </li>    
+                                       
                </ul>
             </div>
          </div>

@@ -2,7 +2,7 @@
 
 session_start();
 	
-$fqdn = "weightwatcher.cloudapps-<GUID>.oslab.opentlc.com";
+$fqdn = "weightwatcher2.cloudapps.example.com";
 if ( isset($_SESSION['fqdn']) ) {
 	$fqdn = $_SESSION['fqdn'];
 } 
@@ -26,10 +26,16 @@ if ( isset($_SESSION['fqdn']) ) {
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="css/themes/testdrivetheme.min.css" />
       <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+<!--
+ 	  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
       <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
-      
+-->
+
+      <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.0.min.css"/>
+      <script src="js/jquery-1.10.2.min.js" ></script>
+      <script src="js/jquery.mobile-1.4.0.min.js"></script>
+            
       <link rel="stylesheet" href="css/testdrive.css" />      
       <script src="js/testdrive.js"  ></script>  
 
